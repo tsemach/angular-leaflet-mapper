@@ -9,7 +9,6 @@ import { LeafletCoreDemoComponent } from './core/core-demo.component';
 import { LeafletLayersDemoComponent } from './layers/layers-demo.component';
 import { LeafletBaseLayersDemoComponent } from './layers/baselayers-demo.component';
 
-
 @NgModule({
 	imports: [
 		CommonModule,
@@ -29,4 +28,5 @@ import { LeafletBaseLayersDemoComponent } from './layers/baselayers-demo.compone
 	bootstrap: [ LeafletDemoComponent ],
 	providers: [ ]
 })
-export class LeafletDemoModule { }
+export class LeafletDemoModule { 
+}
