@@ -8,6 +8,7 @@ import { LeafletDemoComponent } from './leaflet-demo.component';
 import { LeafletCoreDemoComponent } from './core/core-demo.component';
 import { LeafletLayersDemoComponent } from './layers/layers-demo.component';
 import { LeafletBaseLayersDemoComponent } from './layers/baselayers-demo.component';
+import { TrackComponent } from './layers/track/track.component';
 
 @NgModule({
 	imports: [
@@ -20,7 +21,8 @@ import { LeafletBaseLayersDemoComponent } from './layers/baselayers-demo.compone
 		LeafletDemoComponent,
 		LeafletCoreDemoComponent,
 		LeafletLayersDemoComponent,
-		LeafletBaseLayersDemoComponent
+		LeafletBaseLayersDemoComponent,
+		TrackComponent
 	],
 	exports: [
 		LeafletDemoComponent
