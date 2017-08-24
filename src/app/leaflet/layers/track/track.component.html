@@ -1,18 +1,31 @@
-<div class="container" style="margin-top: 30px;">
+<div class="container" style="margin-top: 20px; margin-right: 10px">
 
 	<div class="row">
-
-		<!-- Map -->
-		<div class="col-sm-12 col-md-6 col-lg-8" style="margin-top:16px;">
-
-			<div leaflet style="height: 300px;"
-			     [leafletOptions]="options"
-			     [leafletLayers]="layers"
-			     [leafletLayersControl]="layersControl">
-			</div>
-
+		
+		<!--<div class="col-sm-1 col-md-1 col-lg-1" style="margin: 0"> -->
+		<div class="col-md-1" style="margin: 0px">
+			<div class="container">  
+  				<div class="btn-group-vertical">
+    				<button type="button" class="btn btn-primary">Load</button>
+    				<button type="button" class="btn btn-primary">Samsung</button>
+					<button type="button" class="btn btn-primary">Sony</button>
+					<button type="button" class="btn btn-primary">Apple</button>
+    				<button type="button" class="btn btn-primary">Samsung</button>
+    				<button type="button" class="btn btn-primary">Sony</button>
+  				</div>
+			</div>					
 		</div>
-
+		
+		<!--<div class="col-sm-12 col-md-12 col-lg-10">	-->
+		<div class="col-md-1">
+			<div leaflet style="height: 850px; width: 1800px; margin-left: 10px; margin-right: 10px"
+			    [leafletOptions]="options"
+			    [leafletLayers]="layers"
+           		[leafletLayersControl]="layersControl"
+           		(leafletMapReady)="onMapReady($event)">				
+			</div>					
+		</div>
+		
 	</div>
 
 </div>

@@ -6,8 +6,7 @@ import { LeafletLayersDemoModel } from '../layers-demo.model';
 
 @Component({
   selector: 'leafletTrackDemo',
-  templateUrl: './track.component.html',
-  //styleUrls: ['./track.component.css']
+  templateUrl: './track.component.html',  
 })
 export class TrackComponent implements OnInit {
 
@@ -32,13 +31,15 @@ export class TrackComponent implements OnInit {
 
   //line: any = L.polyline ([[ 46.7, -121.7 ], [ 46.90, -123.90 ], [ 46.86, -122.78 ]]);
   line: any = L.polyline (this.track, {color: 'red'});  
-  line1: any = L.polyline ([[43.55, -12.78], [50.75, -121.53], [45.324, 178.2]], {color: 'green'});  
+  line1: any = L.polyline ([[43.55, -12.78], [50.75, -121.53], [45.324, 178.2]], {color: 'green'}).bindTooltip("test");
 
   //myIcon: any = L.divIcon({className: 'my-div-icon'});
   myIcon: any = L.divIcon();
   theMarker: any = L.marker([46.51, -121.68], {icon: this.myIcon});
   // you can set .my-div-icon styles in CSS
   //L.marker([50.505, 30.57], {icon: myIcon}).addTo(map);
+
+  tooltip: any;
 
  	constructor() {
     //this.track = [[ 46.7, -121.7 ], [ 46.90, -123.90 ], [ 46.86, -122.78 ]];
@@ -109,8 +110,9 @@ export class TrackComponent implements OnInit {
 
 	// Form model object
 	model = new LeafletLayersDemoModel(
-		[ this.LAYER_OSM, this.LAYER_OCM ],
-		this.LAYER_OCM.id,
+    //[ this.LAYER_OSM, this.LAYER_OCM ],
+    [ this.LAYER_OSM, this.LAYER_OCM ],
+		this.LAYER_OSM.id,
     [ this.circle, this.polyline, this.polyline2, this.marker ]
 	);
 
@@ -120,7 +122,19 @@ export class TrackComponent implements OnInit {
 	options = {
 		zoom: 10,
 		center: L.latLng([ 46.879966, -121.726909 ])
-	};
+  };
+  
+  onMapReady(map: L.Map) {
+    console.log("got onMapReady() " + map);
+  /*
+    this.tooltip = L.tooltip({
+      target: this.polyline2,
+	    map: map,
+      html: "I'm a tooltip!"
+    });
+    */
+
+  }
 
 	onApply() {
 
